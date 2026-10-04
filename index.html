@@ -38,23 +38,23 @@
                     Eum quo molestias rerum rem modi quasi illo, odio aut blanditiis iure, delectus similique nostrum incidunt est corporis adipisci eveniet. Illum sit placeat hic deleniti iusto? Excepturi possimus autem mollitia.</p>
                     
                     <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')"> Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
                     </div>
 
-                    <div class="tab-contents active-tab">
+                    <div class="tab-contents active-tab" id="skills">
                        <ul>
                         <li><span>HR</span><br>Recruitment <br>Employee record management</li>
                         
                        </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="experience">
                        <ul>
                         <li><span>Feb 2026 - Apr 2026</span><br>Talent Intelligence Trainee</li>
                        </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="education">
                        <ul>
                         <li><span>2022 - 2025</span><br>Bachelor of Computer Application, DBUU Dehradun</li>
                        </ul>
@@ -63,5 +63,26 @@
             </div>
         </div>
     </div>
+
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add('active-tab');
+    }
+
+</script>
+
 </body>
 </html>
